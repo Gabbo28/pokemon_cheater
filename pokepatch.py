@@ -4,8 +4,6 @@
 import sys
 import os
 
-file = open(sys.argv[1], 'rb+')
-ram = bytearray(file.read())
 
 dictionary = {'A': 0x80, 'B': 0x81, 'C' : 0x82 , 'D': 0x83, 'E': 0x84, 'F': 0x85, 'G':0x86, 'H':0x87, 
 			  'I':0x88, 'J':0x89, 'K':0x8a, 'L':0x8b, 'M':0x8c, 'N':0x8d, 'O':0x8e, 'P':0x8f, 
@@ -143,6 +141,11 @@ def exp():
 		f"This changes the experience points of the first pokemon of you list to {sys.argv[pos+1]}, enjoy!\n")
 
 def main():
+
+	file = open(sys.argv[1], 'rb+')
+	
+	ram = bytearray(file.read())
+
 
 	print(f"\nWelcome {os.getlogin().title()}, this is the patching tool for Gen-1 GBC Pokemon games!\n")
 	
